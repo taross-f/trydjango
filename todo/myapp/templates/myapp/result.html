@@ -1,0 +1,5 @@
+{% if result_list %}
+{% for i in result_list %}
+<p><input type="checkbox" name="delete_text" value="{{ i.id }}">{{i.new_message }} :{{i.created_at}}</p>
+{% endfor %}
+{% endif %}

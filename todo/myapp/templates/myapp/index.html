@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+{% block body %}
+<form action="{% url 'myapp:myapp_index' %}" method="get">
+    <label>メッセージ : <input type="text" name="words" size="20"></label>
+    <input type="submit" name="" value="送信">
+</form>
+<form action="{% url 'myapp:myapp_index' %}" method="post">{% csrf_token %}
+    {% include "myapp/result.html" %}
+    <input type="submit" value="削除">
+</form>
+{% endblock %}
