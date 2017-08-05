@@ -1,6 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Add_Word
 
 def index(request):
-    return HttpResponse("Hello World.")
-
+    data_list = Add_Word.objects.all()
+    return HttpResponse(data_list)
